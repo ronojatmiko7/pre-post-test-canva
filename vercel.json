@@ -1,20 +1,57 @@
 {
   "rewrites": [
-    { "source": "/s/:path*", "destination": "/index.html" },
-    { "source": "/admin/:path*", "destination": "/index.html" }
+    {
+      "source": "/s/:path*",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/admin/:path*",
+      "destination": "/index.html"
+    }
   ],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "Referrer-Policy", "value": "same-origin" },
-        { "key": "X-Frame-Options", "value": "DENY" },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "same-origin"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
         {
           "key": "Content-Security-Policy",
           "value": "default-src 'self'; connect-src 'self' https://bervlosjswfmqhxisikn.supabase.co; img-src 'self' data:; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'"
         }
       ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/c",
+      "destination": "/s/canva-dasar-jr-batam",
+      "permanent": false
+    },
+    {
+      "source": "/pre",
+      "destination": "/s/canva-dasar-jr-batam/pre",
+      "permanent": false
+    },
+    {
+      "source": "/post",
+      "destination": "/s/canva-dasar-jr-batam/post",
+      "permanent": false
+    },
+    {
+      "source": "/eval",
+      "destination": "/s/canva-dasar-jr-batam/evaluasi",
+      "permanent": false
     }
   ]
 }
